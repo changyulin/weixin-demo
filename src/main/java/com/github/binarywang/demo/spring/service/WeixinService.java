@@ -15,6 +15,7 @@ import com.github.binarywang.demo.spring.handler.LogHandler;
 import com.github.binarywang.demo.spring.handler.MenuHandler;
 import com.github.binarywang.demo.spring.handler.MsgHandler;
 import com.github.binarywang.demo.spring.handler.NullHandler;
+import com.github.binarywang.demo.spring.handler.ScanHandler;
 import com.github.binarywang.demo.spring.handler.StoreCheckNotifyHandler;
 import com.github.binarywang.demo.spring.handler.SubscribeHandler;
 import com.github.binarywang.demo.spring.handler.UnsubscribeHandler;
@@ -65,6 +66,9 @@ public class WeixinService extends WxMpServiceImpl {
 
   @Autowired
   private SubscribeHandler subscribeHandler;
+  
+  @Autowired
+  private ScanHandler scanHandler;
 
   private WxMpMessageRouter router;
 
@@ -179,7 +183,7 @@ public class WeixinService extends WxMpServiceImpl {
   }
 
   protected AbstractHandler getScanHandler() {
-    return null;
+    return this.scanHandler;
   }
 
 }

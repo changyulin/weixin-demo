@@ -31,7 +31,7 @@ public class ScanHandler extends AbstractHandler {
 		WeixinService weixinService = (WeixinService) wxMpService;
 
 		// 获取微信用户基本信息
-		WxMpUser userWxInfo = weixinService.getUserService().userInfo(wxMessage.getFromUser(), null);
+		//WxMpUser userWxInfo = weixinService.getUserService().userInfo(wxMessage.getFromUser(), null);
 
 		try {
 			System.out.println("+++scan+++");

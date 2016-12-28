@@ -31,13 +31,13 @@ public class SubscribeHandler extends AbstractHandler {
 		WeixinService weixinService = (WeixinService) wxMpService;
 
 		// 获取微信用户基本信息
-		WxMpUser userWxInfo = weixinService.getUserService().userInfo(wxMessage.getFromUser(), null);
+		//WxMpUser userWxInfo = weixinService.getUserService().userInfo(wxMessage.getFromUser(), null);
 
-		if (userWxInfo != null) {
+		//if (userWxInfo != null) {
 			// TODO 可以添加关注用户到本地
-		}
+		//}
 
-		WxMpXmlOutMessage responseResult = null;
+		/*WxMpXmlOutMessage responseResult = null;
 		try {
 			responseResult = handleSpecial(wxMessage);
 		} catch (Exception e) {
@@ -46,7 +46,7 @@ public class SubscribeHandler extends AbstractHandler {
 
 		if (responseResult != null) {
 			return responseResult;
-		}
+		}*/
 
 		try {
 			System.out.println("+++subscribe+++");

@@ -21,6 +21,7 @@ import com.github.binarywang.demo.spring.handler.SubscribeHandler;
 import com.github.binarywang.demo.spring.handler.UnsubscribeHandler;
 
 import me.chanjar.weixin.common.api.WxConsts;
+import me.chanjar.weixin.common.exception.WxErrorException;
 import me.chanjar.weixin.mp.api.WxMpInMemoryConfigStorage;
 import me.chanjar.weixin.mp.api.WxMpMessageRouter;
 import me.chanjar.weixin.mp.api.impl.WxMpServiceImpl;
@@ -186,4 +187,13 @@ public class WeixinService extends WxMpServiceImpl {
     return this.scanHandler;
   }
 
+  
+  public String getOpenIdByCode(String code){
+	 try {
+		return this.oauth2getAccessToken(code).getOpenId();
+	} catch (WxErrorException e) {
+		this.logger.error("getOpenIdByCode出现异常", e);
+		return "";
+	}
+  }
 }

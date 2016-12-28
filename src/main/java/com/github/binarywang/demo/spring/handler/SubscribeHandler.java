@@ -50,7 +50,7 @@ public class SubscribeHandler extends AbstractHandler {
 
 		try {
 			System.out.println("+++subscribe+++");
-			String content = "/::)欢迎您关注培智星科技有限公司，我们会为您提供更好的服务！<a href=\"http://www.baidu.com\">点击完善信息</a>，即可查看宝宝上课签到实况。";
+			String content = "/::)欢迎您关注培智星科技有限公司，我们会为您提供更好的服务！<a href=\"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx9380b1a025cd5291&redirect_uri=http%3A%2F%2Fchangyulin.applinzi.com%2Fwechat%2Foauth2Test&response_type=code&scope=snsapi_base&state=123#wechat_redirect\">点击完善信息</a>，即可查看宝宝上课签到实况。";
 			return new TextBuilder().build(content, wxMessage, weixinService);
 		} catch (Exception e) {
 			this.logger.error(e.getMessage(), e);
